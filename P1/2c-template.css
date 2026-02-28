@@ -1,0 +1,476 @@
+/* https://www.w3schools.com/howto/howto_css_two_columns.asp */
+/* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
+/* Así definimos el comportamiento de caja para todos los elementos */
+* {
+    box-sizing: border-box;
+  }
+  
+/* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
+.columna {
+float: left;
+padding: 10px;
+min-height: 500px;
+}
+
+.izquierda {
+width: 25%;
+}
+
+.derecha {
+width: 75%;
+}
+
+.izquierda {
+    display: flex;
+    flex-direction: column; /* Apila todo en vertical */
+    align-items: center;    /* Centra los elementos dentro de la columna */
+    text-align: left;       /* Pero mantiene el texto alineado a la izquierda */
+}
+
+.izquierda ul {
+    width: 100%; /* Para que la lista no se encoja */
+}
+.columna img {
+    border-radius: 5px;
+    border: 1px solid #333;
+    max-width: 250px; /* Tamaño controlado */
+    height: auto;
+    display: block;
+    margin: 10px auto; /* Centrada en su columna */
+}
+
+/*Para cambiar los colores*/
+body {
+    background-color: #26292d; /* Un azul casi negro, muy nocturno */
+    color: #f0f0f0; /* Gris muy claro, casi blanco, para que no canse la vista */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+/* El contenedor de las dos columnas */
+.fila {
+    background-color: #171f2f; /* Gris oscuro para diferenciar las columnas del fondo */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(17, 23, 71, 0.8);
+    margin: 10px auto;
+    max-width: 1100px;
+    display: flex; /* Mantiene la estructura de dos columnas */
+}
+
+/* Esto asegura que cada bloque ocupe todo el ancho y se ponga uno debajo de otro */
+.columna.izquierda {
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    align-items: flex-start; /* Alinea el texto a la izquierda */
+    padding: 20px;
+}
+
+.iresponsive {
+    width: 100%; 
+    margin-bottom: 20px; /* Espacio debajo de la foto */
+}
+
+.iresponsive img {
+    display: block;
+    max-width: 100%; /* Para que no se salga de la columna */
+    height: auto;
+}
+
+.seccion-cv {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Clear floats despues de las columnas para eliminar la superposición */
+.fila:after {
+content: "";
+display: table;
+clear: both;
+}
+
+#c1 {
+    background-color:#01073a;
+}
+
+#c2 {
+    background-color:#17113f;
+}
+
+/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
+/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.iresponsive {
+    padding: 0 6px;
+    float: left;
+    width: 50%;
+  }
+
+/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
+/* Así conseguimos que el contenido se vea bien en dispositvos móviles */
+
+@media screen and (max-width: 600px) {
+    .columna {
+      width: 100%;
+    }
+
+    .iresponsive {
+        width: 100%;
+    }
+}
+
+/* Estilo para las Tarjetas (Cards) */
+
+.card {
+    background: linear-gradient(145deg, #1a1f29, #12161f);
+    border-left: 5px solid #4a90e2; /* Una línea azul que represente su energía */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease; /* Efecto al pasar el ratón */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* La tarjeta sube un poquito al pasar el ratón */
+    border-left: 5px solid #ffffff; /* Cambia a blanco al activarse */
+}
+
+.card h3 {
+    color: #4a90e2;
+    margin-top: 0;
+}
+
+/* Menú de navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    background: #000;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+    text-decoration: underline;
+    color: #4a90e2; /* Un azul suave para resaltar */
+}
+
+/* Responsive: Apilar columnas en móviles */
+@media (max-width: 600px) {
+    .fila {
+        display: block;
+    }
+    .columna {
+        width: 100% !important;
+    }
+}
+
+/*Botón*/
+
+.boton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333; /* Color oscuro estilo Megumi */
+    color: white;
+    text-decoration: none; /* Quita el subrayado */
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.boton:hover {
+    background-color: #555; /* Cambia de color al pasar el ratón */
+}
+
+nav {
+    background-color: #000;
+    padding: 15px 0;
+    border-bottom: 2px solid #333;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Centra los botones */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: #fff;
+    text-shadow: 0 0 10px #4a90e2; /* Brillo azul en el texto */
+}
+
+/*Centrar el menu*/
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Activa el modo flexible */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    background-color: #000; /* Fondo negro como en tu captura */
+}
+
+nav li {
+    margin: 0 15px; /* Espaciado entre los botones */
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+
+/* Ajusta el tamaño de la imagen de la columna derecha */
+.derecha img {
+    max-width: 400px; /* Cambia este número hasta que te guste el tamaño */
+    width: 100%;      /* Asegura que no se pase del ancho de la columna */
+    height: auto;     /* Mantiene la proporción */
+    display: block;
+    margin: 20px 0;   /* Espacio arriba y abajo */
+}
+
+/*Imagen Megumi about*/
+.img-about {
+    max-width: 400px; /* Ajusta este número (200px, 300px...) hasta que te guste el tamaño */
+    width: 100%;      /* Hace que sea responsive y no se salga en móviles */
+    height: auto;     /* Mantiene la proporción para que no se vea estirada */
+    border-radius: 10px; 
+    /*border: 2px solid #4a90e2; /* Un borde azul para que pegue con el estilo de Megumi */
+    display: block;
+    margin: 20px auto; /* La centra horizontalmente */
+}
+
+/* Paleta de colores: Negro profundo, Gris ceniza y Azul sombra */
+:root {
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --accent: #58a6ff; /* Azul energía suave */
+    --text: #c9d1d9;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Contenedor principal con bordes suaves */
+.fila {
+    display: flex;
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: var(--card-bg);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Columna Izquierda (Perfil) */
+.izquierda {
+    width: 30%;
+    background-color: #090c10;
+    padding: 30px;
+    border-right: 1px solid #30363d;
+}
+
+.img-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Imagen circular más moderna */
+    border: 2px solid var(--accent);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Columna Derecha (Multimedia y Texto) */
+.derecha {
+    width: 70%;
+    padding: 40px;
+}
+
+/* EL TRUCO: Imagen y Video al lado */
+.multimedia-flex {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.media-item {
+    flex: 1; /* Ambos ocupan el mismo espacio */
+}
+
+.media-item img, .media-item iframe {
+    width: 100%;
+    height: 200px; /* Altura fija para que estén alineados */
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Menú de navegación elegante */
+nav {
+    background: transparent;
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+    .fila, .multimedia-flex {
+        flex-direction: column;
+    }
+    .izquierda, .derecha {
+        width: 100%;
+    }
+}
+
+/* Estilo para los enlaces de contacto */
+.link-contacto {
+    color: var(--accent); /* Usará el azul brillante de Megumi */
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.link-contacto:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px var(--accent); /* Efecto de brillo al pasar el ratón */
+    text-decoration: underline;
+}
+
+/* Quitar los puntos de la lista si prefieres un look más limpio */
+.info-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-block li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* Contenedor principal para centrar todo el bloque */
+.main-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Para que use casi toda la pantalla vertical */
+    padding: 40px 20px;
+}
+
+.container-centrado {
+    max-width: 800px; /* Evita que el texto se estire demasiado */
+    text-align: center; /* Centra títulos y fotos */
+    background: rgba(255, 255, 255, 0.03); /* Un fondo muy sutil para dar profundidad */
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(88, 166, 255, 0.1);
+}
+
+
+
+/* Centrado del texto con buen espacio */
+.texto-contenido {
+    text-align: left; /* El texto largo es más fácil de leer alineado a la izquierda */
+    margin: 20px auto;
+    color: #c9d1d9;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* El Botón centrado */
+.acciones {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+}
+
+.boton-volver {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #21262d;
+    color: #58a6ff;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.boton-volver:hover {
+    background-color: #30363d;
+    border-color: #8b949e;
+    transform: scale(1.05); /* Pequeño efecto de agrandado */
+}
+
+.frase-megumi {
+    font-size: 1.8rem;         /* Tamaño grande */
+    font-style: italic;        /* Estilo cursiva */
+    color: #dee1e5;            /* El azul de energía de Megumi */
+    text-align: center;        /* Centrado horizontal */
+    margin: 30px auto;         /* Espacio arriba y abajo */
+    max-width: 80%;            /* Para que no ocupe todo el ancho */
+    line-height: 1.4;
+    font-family: 'Georgia', serif; /* Una fuente con serifa queda mejor para citas */
+    opacity: 0.9;
+}
+
+/* Opcional: añade unas comillas decorativas antes y después */
+.frase-megumi::before { content: "“"; font-size: 3rem; vertical-align: middle; margin-right: 10px; }
+.frase-megumi::after { content: "”"; font-size: 3rem; vertical-align: middle; margin-left: 10px; }
+
+/* Para centrar el botón y el texto de abajo como pediste */
+.acciones {
+    display: flex;
+    justify-content: center; /* Centra el botón */
+    margin-top: 40px;
+}
+
+.texto-contenido {
+    text-align: center; /* Centra también los párrafos de información si lo prefieres */
+    max-width: 600px;
+    margin: 0 auto;
+}
+/* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */
+
