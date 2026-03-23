@@ -1,0 +1,184 @@
+/* --- Estilos Globales y Reset --- */
+:root {
+    --verde-brillante: #0033ff; /* Color principal retro */
+    --verde-oscuro: #000044;     /* Para bordes internos o estados */
+    --rojo-retro: #f344ff;       /* Para los botones de acción */
+    --fondo-negro: #0a0a0a;      /* Fondo de pantalla */
+    --fuente-retro: 'Courier New', Courier, monospace; /* Tipografía mono */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #000; /* Fondo total negro */
+    color: var(--verde-brillante);
+    font-family: var(--fuente-retro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Contenedor Principal (Marco exterior verde) --- */
+.pantalla-principal {
+    background-color: var(--fondo-negro);
+    border: 3px solid var(--verde-brillante);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 450px; /* Ajusta el ancho para que se parezca a la imagen */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* --- Cabecera --- */
+.cabecera {
+    text-align: center;
+    border-bottom: 2px solid var(--verde-brillante);
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+.titulo-retro {
+    font-size: 1.8rem;
+    letter-spacing: 0.5rem; /* Espaciado entre letras como en 'B O O M' */
+    color: #ccffcc; /* Un verde muy pálido, casi blanco, para el título */
+}
+
+/* --- Paneles con Borde Doble (Estado y Controles) --- */
+.panel-estado, .panel-controles {
+    border: 3px double var(--verde-brillante); /* Borde doble característico */
+    padding: 15px;
+    text-align: center;
+}
+
+/* --- Panel de Estado (Superior) --- */
+.visor-clave {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.digito-clave {
+    width: 60px;
+    height: 45px;
+    border: 1px solid var(--verde-brillante);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rojo-retro); /* Asteriscos en rojo según la imagen */
+}
+
+/* Estilo para cuando se acierta el número (puedes cambiar el color aquí) */
+.digito-clave.acierto {
+    color: var(--verde-brillante);
+    text-shadow: 0 0 5px var(--verde-brillante); /* Efecto resplandor */
+}
+
+.cronometro {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ccffcc; /* Color pálido para el tiempo */
+}
+
+.info-intentos {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.zona-mensaje {
+    font-size: 0.85rem;
+    line-height: 1.2;
+    min-height: 3em; /* Espacio reservado para el mensaje */
+}
+
+/* --- Panel de Controles (Inferior) --- */
+.grid-teclado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+
+/* --- Estilo de Botones --- */
+button {
+    font-family: var(--fuente-retro);
+    background: transparent;
+    border: 1px solid var(--verde-brillante);
+    color: var(--verde-brillante);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background-color: var(--verde-oscuro);
+}
+
+/* Botones numéricos específicos */
+.btn-num {
+    height: 45px;
+}
+
+/* Botones numéricos desactivados (marcados como usados) */
+.btn-num:disabled {
+    border-color: var(--verde-oscuro);
+    color: var(--verde-oscuro);
+    cursor: not-allowed;
+}
+
+/* Botones de acción (Start, Stop, Reset) en rojo */
+.botones-accion {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.btn-rojo {
+    border-color: var(--rojo-retro);
+    color: var(--rojo-retro);
+}
+
+.btn-rojo:hover:not(:disabled) {
+    background-color: #440000;
+}
+
+.digito-clave {
+    width: 60px;
+    height: 45px;
+    border: 1px solid var(--verde-brillante);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rojo-retro); /* Asteriscos iniciales rojos */
+    background: #000;
+}
+
+.digito-clave.acierto {
+    color: var(--verde-brillante) !important; /* Número acertado en verde */
+}
+
+.btn-num:disabled {
+    border-color: #222;
+    color: #333; /* Botón usado se vuelve muy oscuro */
+    cursor: not-allowed;
+}
+
+.zona-mensaje {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    font-weight: bold;
+    min-height: 40px;
+}

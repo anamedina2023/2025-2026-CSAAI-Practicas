@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2: ¡BOOM! - Código Secreto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="pantalla-principal">
+        
+        <header class="cabecera">
+            <h1 class="titulo-retro">B O O M</h1>
+        </header>
+
+        <div class="panel-estado">
+            <div class="visor-clave">
+                <span class="digito-clave" id="d0">*</span>
+                <span class="digito-clave" id="d1">*</span>
+                <span class="digito-clave" id="d2">*</span>
+                <span class="digito-clave" id="d3">*</span>
+            </div>
+            
+            <div class="cronometro" id="crono">0:00:00</div>
+            
+            <div class="info-intentos">
+                Intentos restantes: <span id="intentos">7</span>
+            </div>
+            
+            <div class="zona-mensaje" id="mensaje">
+                Nueva partida preparada. Pulsa Start o un número para comenzar.
+            </div>
+        </div>
+
+        <div class="panel-controles">
+            <div class="grid-teclado">
+                <button class="btn-num" onclick="presionarDigito(7)">7</button>
+                <button class="btn-num" onclick="presionarDigito(8)">8</button>
+                <button class="btn-num" onclick="presionarDigito(9)">9</button>
+                
+                <button class="btn-num" onclick="presionarDigito(4)">4</button>
+                <button class="btn-num" onclick="presionarDigito(5)">5</button>
+                <button class="btn-num" onclick="presionarDigito(6)">6</button>
+                
+                <button class="btn-num" onclick="presionarDigito(1)">1</button>
+                <button class="btn-num" onclick="presionarDigito(2)">2</button>
+                <button class="btn-num" onclick="presionarDigito(3)">3</button>
+                
+                <div class="espacio-vacio"></div>
+                <button class="btn-num" onclick="presionarDigito(0)">0</button>
+                <div class="espacio-vacio"></div>
+            </div>
+
+            <div class="botones-accion">
+                <button id="btn-start" class="btn-rojo" onclick="startCrono()">Start</button>
+                <button id="btn-stop" class="btn-rojo" onclick="stopCrono()">Stop</button>
+                <button id="btn-reset" class="btn-rojo" onclick="resetJuego()">Reset</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
