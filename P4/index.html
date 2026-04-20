@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat The Word - Reto Viral</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <div class="brand">
+                <h1>Beat The Word</h1>
+                <p>Sigue la secuencia al ritmo del Beat</p>
+            </div>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <span>Nivel</span>
+                    <strong id="val-level">1</strong>
+                </div>
+                <div class="stat-card">
+                    <span>Tiempo</span>
+                    <strong id="val-time">0s</strong>
+                </div>
+                <div class="stat-card">
+                    <span>Estado</span>
+                    <strong id="val-status">Esperando</strong>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <div class="panel-card info">
+                    <h2>¿Cómo jugar?</h2>
+                    <p>Mira la cuadrícula y di en voz alta la palabra de la imagen que se ilumina.</p>
+                    <p>¡Intenta no equivocarte mientras sube la velocidad!</p>
+                </div>
+                <div class="config-panel">
+                    <h3>Configuración</h3>
+                    <div class="input-group">
+                        <label>Pareja de palabras</label>
+                        <select id="select-set">
+                            <option value="set1">Pato / Plato</option>
+                            <option value="set2">Luna / Lupa</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Nivel inicial</label>
+                        <select id="select-level">
+                            <option value="1">Nivel 1</option>
+                            <option value="2">Nivel 2</option>
+                            <option value="3">Nivel 3</option>
+                            <option value="4">Nivel 4</option>
+                            <option value="5">Nivel 5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="btn-start" class="btn btn-primary">Empezar partida</button>
+                    <button id="btn-stop" class="btn btn-danger" disabled>Detener</button>
+                    <button id="btn-music" class="btn btn-secondary">Música: OFF</button>
+                </div>
+            </aside>
+
+            <section class="game-board">
+                <div class="word-display">
+                    <h2 id="word-hint">¡PREPÁRATE!</h2>
+                </div>
+                <div id="grid" class="grid-8">
+                    </div>
+            </section>
+        </div>
+    </div>
+
+    <audio id="bg-music" src="music.mp3" loop></audio>
+    <script src="game.js"></script>
+</body>
+</html>
