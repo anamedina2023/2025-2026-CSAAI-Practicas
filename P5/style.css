@@ -1,0 +1,53 @@
+/* jshint esversion: 6 */
+/* jshint browser: true */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+canvas {
+    background-color: #1a1a1a; 
+    display: block;
+    max-width: 100vw;
+    max-height: 80vh;
+    touch-action: none;
+}
+
+#touch-controls {
+    display: none;
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+    #touch-controls { display: flex; }
+    body { flex-direction: column; }
+}
+
+button {
+    width: 60px; height: 60px;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid white;
+    color: white;
+    border-radius: 50%;
+    margin: 5px;
+    font-weight: bold;
+}
